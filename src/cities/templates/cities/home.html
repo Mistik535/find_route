@@ -11,6 +11,7 @@
                         <td>
                             <a href="{% url 'cities:detail' pk=object.pk %}">{{ object.name }}</a>
                         </td>
+                        {% if user.is_authenticated %}
                         <td>
                             <a href="{% url 'cities:update' pk=object.pk %}">
                                 <button type="submit" class="btn btn-primary">Редактировать</button>
@@ -21,6 +22,10 @@
                                 <button type="submit" class="btn btn-danger">Удалить</button>
                             </a>
                         </td>
+                        {% else %}
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                        {% endif %}
                     </tr>
                     {#<a href="{% url 'cities:detail' pk=object.pk %}">{{ object.name }}</a>#}
                 {% endfor %}
@@ -29,6 +34,7 @@
     </div>
 
     <nav aria-label="Page navigation example">
+    {% if user.is_authenticated %}
   <ul class="pagination justify-content-center">
     <li class="page-item">
         {% if page_obj.has_previous %}
@@ -68,4 +74,5 @@
             </form>
                 </div>
                 </div>
+    {% endif %}
 {% endblock %}
