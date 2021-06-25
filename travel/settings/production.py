@@ -140,10 +140,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# STATIC_ROOT = BASE_DIR.joinpath('staticfiles')
+STATIC_ROOT = BASE_DIR.joinpath('staticfiles')
 
 # WHITENOISE_USE_FINDERS = True
 
-STATIC_ROOT = None
+# STATIC_ROOT = None
 
 # django_heroku.settings(locals()) #В конце
