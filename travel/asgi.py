@@ -1,5 +1,5 @@
 """
-ASGI config for find_route project.
+ASGI config for travel project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 

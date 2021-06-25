@@ -7,6 +7,7 @@ def home(request):
 
     return render(request, 'home.html', {'name': name})
 
+
 def about(request):
     name = 'About us'
 
