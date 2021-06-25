@@ -12,12 +12,14 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
+# import django_heroku
 
 DB_NAME = os.environ.get('DB_NAME')
 DB_PASSWORD = os.environ.get('DB_PASSWORD')
 DB_HOST = os.environ.get('DB_HOST')
 DB_USER = os.environ.get('DB_USER')
 SECRET_KEY = os.environ.get('SECRET_KEY')
+DB_PORT = os.environ.get('DB_PORT')
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -93,7 +95,7 @@ DATABASES = {
         'USER': DB_USER,
         'PASSWORD': DB_PASSWORD,
         'HOST': DB_HOST,
-        'PORT': '5432',
+        'PORT': DB_PORT,
     }
 }
 import dj_database_url
@@ -138,4 +140,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = BASE_DIR.joinpath('staticfiles')
+# STATIC_ROOT = BASE_DIR.joinpath('staticfiles')
+
+# WHITENOISE_USE_FINDERS = True
+
+STATIC_ROOT = None
+
+# django_heroku.settings(locals()) #В конце
