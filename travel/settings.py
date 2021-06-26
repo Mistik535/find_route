@@ -41,10 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'travel.apps.cities',
-    'travel.apps.trains',
-    'travel.apps.routes',
-    'travel.apps.accounts',
+    'travel',
 ]
 
 MIDDLEWARE = [
@@ -64,6 +61,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             os.path.join(PROJECT_ROOT, "templates"),
+            os.path.join(PROJECT_ROOT, "cache"),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -127,7 +125,7 @@ STATIC_URL = "/static/"
 
 STATICFILES_DIRS = [
     os.path.join(PROJECT_ROOT, "templates"),
-    # os.path.join(PROJECT_ROOT, "cache"),
+    os.path.join(PROJECT_ROOT, "cache"),
 ]
 
 STATIC_ROOT = os.path.join(PROJECT_ROOT, "static")

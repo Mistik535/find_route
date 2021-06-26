@@ -5,7 +5,6 @@ from django.shortcuts import render
 
 def home(request):
     name = "Bob"
-    # template_name = "home.html"
     return render(request, "home.html", {"name": name})
 
 

@@ -1,10 +1,3 @@
-{% url 'cities:home' as cities_home_url %}
-{% url 'cities:create' as cities_create_url %}
-{% url 'trains:home' as trains_home_url %}
-{% url 'trains:create' as trains_create_url %}
-{% url 'list' as route_list %}
-
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -22,7 +15,7 @@
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-light container" style="background-color: #e3f2fd;">
-    <a class="navbar-brand" href="{% url 'home' %}">FindRoute</a>
+    <a class="navbar-brand" href="{% url "home" %}">FindRoute</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -30,50 +23,15 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item {% if request.path == cities_home_url %}active {% endif %}	">
-                <a class="nav-link" href="{% url 'home' %}">Города </a>
+                <a class="nav-link" href="{% url "home" %}">Города </a>
             </li>
             <li class="nav-item {% if request.path == trains_home_url %}active {% endif %}">
-                <a class="nav-link" href="{% url 'home' %}">Поезда</a>
+                <a class="nav-link" href="{% url "home" %}">Поезда</a>
             </li>
-            <li class="nav-item
-           {% if request.path == route_list %} active {% endif %}">
-                <a class="nav-link" href="{% url 'list' %}">Маршруты</a>
+            <li class="nav-item {% if request.path == route_list %} active {% endif %}">
+                <a class="nav-link" href="{% url "home" %}">Маршруты</a>
             </li>
-{#            {% if user.is_authenticated %}#}
-{#                <li class="nav-item dropdown#}
-{#             {% if request.path == cities_create_url or request.path == trains_create_url %}#}
-{#              active#}
-{#             {% endif %}#}
-{#            ">#}
-{#                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"#}
-{#                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">#}
-{#                        Добавить#}
-{#                    </a>#}
-{##}
-{#                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">#}
-{#                        <a class="dropdown-item" href="{% url 'cities:create' %}">Новый город</a>#}
-{#                        <a class="dropdown-item" href="{% url 'trains:create' %}">Новый поезд</a>#}
-{#                    </div>#}
-{##}
-{#                </li>#}
-{#            {% else %}#}
-{#                <li class="nav-item ">#}
-{#                    <a class="nav-link disabled" href="">Добавить</a>#}
-{#                </li>#}
-{#            {% endif %}#}
 
-{#            {% if user.is_authenticated %}#}
-{#                <li class="nav-item ">#}
-{#                    <a class="nav-link" href="{% url 'accounts:logout' %}">Выйти</a>#}
-{#                </li>#}
-{#            {% else %}#}
-{#                <li class="nav-item ">#}
-{#                    <a class="nav-link" href="{% url 'accounts:login' %}">Войти</a>#}
-{#                </li>#}
-{#                <li class="nav-item ">#}
-{#                    <a class="nav-link" href="{% url 'accounts:register' %}">Регистрация</a>#}
-{#                </li>#}
-{#            {% endif %}#}
 
         </ul>
     </div>
@@ -125,8 +83,8 @@
 -->
 <script>
     $(document).ready(function () {
-        $('.js-example-basic-single').select2();
-        $('.js-example-basic-multiple').select2();
+        $(".js-example-basic-single").select2();
+        $(".js-example-basic-multiple").select2();
     });
 </script>
 </body>
