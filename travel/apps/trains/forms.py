@@ -1,6 +1,6 @@
 from django import forms
-from cities.models import City
-from trains.models import Train
+from .models import City
+from .models import Train
 
 
 class TrainForm(forms.ModelForm):

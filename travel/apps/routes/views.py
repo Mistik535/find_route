@@ -5,11 +5,11 @@ from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, DeleteView
 
-from cities.models import City
-from routes.forms import RouteForm, RouteModelForm
-from routes.models import Route
-from routes.utils import get_routes
-from trains.models import Train
+from travel.apps.cities.models import City
+from travel.apps.routes.forms import RouteForm, RouteModelForm
+from travel.apps.routes.models import Route
+from travel.apps.routes.utils import get_routes
+from travel.apps.trains.models import Train
 
 
 # @login_required

@@ -1,4 +1,4 @@
-from trains.models import Train
+from travel.apps.trains.models import Train
 
 
 def dfs_paths(graph, start, goal):

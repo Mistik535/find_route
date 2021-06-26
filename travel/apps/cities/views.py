@@ -7,8 +7,8 @@ from django.urls import reverse_lazy
 from django.views.generic import DetailView, CreateView, UpdateView, DeleteView, \
     ListView
 
-from cities.forms import HtmlForm, CityForm
-from cities.models import City
+from .forms import HtmlForm, CityForm
+from .models import City
 
 __all__ = (
     'home', 'CityDetailView', 'CityCreateView', 'CityUpdateView',

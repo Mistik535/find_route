@@ -1,7 +1,7 @@
 from django import forms
-from cities.models import City
-from routes.models import Route
-from trains.models import Train
+from travel.apps.cities.models import City
+from travel.apps.routes.models import Route
+from travel.apps.trains.models import Train
 
 
 class RouteForm(forms.Form):

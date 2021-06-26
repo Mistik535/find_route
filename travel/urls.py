@@ -16,18 +16,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-# from travel.apps.routes.views import *
+from travel.apps.routes.views import *
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    # path("cities/", include("apps.cities.urls"),  name="cities"),
-    # path("trains/", include("apps.trains.urls"), name="trains"),
-    # path("accounts/", include("apps.accounts.urls"), name="accounts"),
-    # path("", home, name="home"),
-    # path("find_routes/", find_routes, name="find_routes"),
-    # path("add_route/", add_route, name="add_route"),
-    # path("save_route/", save_route, name="save_route"),
-    # path("list/", RouteListView.as_view(), name="list"),
-    # path("detail/<int:pk>/", RouteDetailView.as_view(), name="detail"),
-    # path("delete/<int:pk>/", RouteDeleteView.as_view(), name="delete"),
+    path("cities/", include("travel.apps.cities.urls"),  name="cities"),
+    path("trains/", include("travel.apps.trains.urls"), name="trains"),
+    path("accounts/", include("travel.apps.accounts.urls"), name="accounts"),
+    path("", home, name="home"),
+    path("find_routes/", find_routes, name="find_routes"),
+    path("add_route/", add_route, name="add_route"),
+    path("save_route/", save_route, name="save_route"),
+    path("list/", RouteListView.as_view(), name="list"),
+    path("detail/<int:pk>/", RouteDetailView.as_view(), name="detail"),
+    path("delete/<int:pk>/", RouteDeleteView.as_view(), name="delete"),
 ]

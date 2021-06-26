@@ -9,8 +9,8 @@ from django.views.generic import (
     ListView
 )
 
-from trains.forms import TrainForm
-from trains.models import Train
+from .forms import TrainForm
+from .models import Train
 
 __all__ = (
     'home', 'TrainListView',
